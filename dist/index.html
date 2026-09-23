@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11131c" />
+    <meta name="description" content="Portfólio de Douglas Araújo, desenvolvedor full-stack. Projetos, habilidades, experiências e contato." />
+    <title>Douglas Araújo — Desenvolvedor Full-Stack</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%2311131c'/%3E%3Cpath d='M13 17h16c14 0 22 7 22 15S43 47 29 47H13z' fill='none' stroke='%23a7a9fa' stroke-width='6'/%3E%3Cpath d='M25 29h20M35 19v26' stroke='%23f1c66e' stroke-width='4'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="header-inner shell">
+        <a class="brand" href="#top" aria-label="Douglas Araújo, voltar ao início">Douglas Araújo<span>_</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Navegação principal">
+          <a href="#projects">Projetos</a>
+          <a href="#about">Sobre Mim</a>
+          <a href="#skills">Habilidades</a>
+          <a href="#experience">Experiências</a>
+          <a href="#contact">Contatos</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> Olá, eu sou o Douglas</p>
+          <h1 id="hero-title">Desenvolvo experiências web <span>de ponta a ponta.</span></h1>
+          <p class="hero-description">Sou desenvolvedor full-stack com experiência em aplicações para pesquisa, educação e gestão pública. Transformo processos complexos em ferramentas mais simples de usar.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Ver projetos <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="#contact">Entrar em contato</a>
+          </div>
+          <p class="hero-meta">RIO BRANCO, ACRE <span aria-hidden="true">/</span> FULL-STACK DEVELOPER</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="code-window">
+            <div class="window-bar"><i></i><i></i><i></i><span>douglas.dev</span></div>
+            <div class="code-lines">
+              <p><span class="line-no">01</span> <span class="code-purple">const</span> developer = {</p>
+              <p><span class="line-no">02</span> &nbsp;name: <span class="code-yellow">'Douglas Araújo'</span>,</p>
+              <p><span class="line-no">03</span> &nbsp;focus: <span class="code-yellow">'full-stack'</span>,</p>
+              <p><span class="line-no">04</span> &nbsp;stack: [<span class="code-green">'Django'</span>,</p>
+              <p><span class="line-no">05</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">'Angular'</span>],</p>
+              <p><span class="line-no">06</span> &nbsp;build: <span class="code-purple">'soluções úteis'</span></p>
+              <p><span class="line-no">07</span> }</p>
+            </div>
+            <div class="terminal-line"><span>›</span> pronto para o próximo projeto<span class="cursor">_</span></div>
+          </div>
+          <span class="art-cross art-cross-one">+</span><span class="art-cross art-cross-two">+</span>
+        </div>
+      </section>
+
+      <section id="projects" class="section shell" aria-labelledby="projects-title">
+        <div class="section-heading"><span class="section-index">[ 01 ]</span><h2 id="projects-title">PROJETOS</h2><span class="heading-rule"></span></div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-top"><span class="project-icon" aria-hidden="true">⌘</span><span class="card-number">01 / 03</span></div>
+            <p class="project-category">PESQUISA & GESTÃO</p>
+            <h3>Plataforma de Projetos Institucionais</h3>
+            <p>Centraliza a criação, aprovação e consulta de projetos de pesquisa da PROPEG/UFAC, simplificando o trâmite antes realizado no SEI.</p>
+            <div class="card-bottom"><ul class="tags" aria-label="Tecnologias"><li>Python</li><li>Django</li><li>PostgreSQL</li></ul><a class="project-link" href="https://github.com/douglas-ma/PPI-PROPEG" target="_blank" rel="noopener noreferrer">Ver no GitHub <span aria-hidden="true">↗</span></a><span class="project-context">PROPEG / UFAC · 2025</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-top"><span class="project-icon" aria-hidden="true">▦</span><span class="card-number">02 / 03</span></div>
+            <p class="project-category">EDUCAÇÃO & ORGANIZAÇÃO</p>
+            <h3>Sistema de Gestão de Atividades Docentes</h3>
+            <p>Aplicação web que reúne aulas, reuniões, conselhos e comprovantes das atividades acadêmicas de docentes em um único lugar.</p>
+            <div class="card-bottom"><ul class="tags" aria-label="Tecnologias"><li>Python</li><li>Django</li><li>PostgreSQL</li></ul><span class="project-context">ENGENHARIA DE SOFTWARE II · 2025</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-top"><span class="project-icon" aria-hidden="true">◫</span><span class="card-number">03 / 03</span></div>
+            <p class="project-category">GESTÃO PÚBLICA</p>
+            <h3>Plataforma de Gerenciamento de Acórdãos</h3>
+            <p>Sistema para organizar acórdãos e processos do TATE/SEFAZ-AC, com interface responsiva e busca por palavras-chave.</p>
+            <div class="card-bottom"><ul class="tags" aria-label="Tecnologias"><li>Angular</li><li>Spring Boot</li><li>TypeScript</li></ul><a class="project-link" href="https://github.com/douglas-ma/Projeto-Tate-WebAcademy" target="_blank" rel="noopener noreferrer">Ver no GitHub <span aria-hidden="true">↗</span></a><span class="project-context">TATE / SEFAZ-AC · 2024–2025</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section shell" aria-labelledby="about-title">
+        <div class="section-heading"><span class="section-index">[ 02 ]</span><h2 id="about-title">SOBRE MIM</h2><span class="heading-rule"></span></div>
+        <div class="about-layout">
+          <div class="about-main">
+            <p class="about-lead">Gosto de construir software que resolve problemas reais — da interface que as pessoas usam à lógica que faz tudo funcionar.</p>
+            <p>Atuei em projetos para a UFAC e para a SEFAZ/AC com desenvolvimento web, organização de dados, testes e trabalho em equipe. Também fui monitor de Iniciação Científica no Web Academy, apoiando alunos e pesquisando a inserção profissional dos egressos.</p>
+            <p>Sou bacharel em Sistemas de Informação pela UFAC e curso pós-graduação em Engenharia de Testes de Software com Inteligência Artificial.</p>
+          </div>
+          <div class="about-aside">
+            <div class="monogram" aria-hidden="true"><span>D</span><span>A</span><div class="monogram-grid"></div></div>
+            <div class="education-card"><span class="small-label">FORMAÇÃO</span><strong>Pós-graduação em Engenharia de Testes de Software com IA</strong><span>UFAC · Em andamento</span></div>
+            <div class="education-card"><span class="small-label">GRADUAÇÃO</span><strong>Sistemas de Informação</strong><span>UFAC · 2022–2026</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section shell" aria-labelledby="skills-title">
+        <div class="section-heading"><span class="section-index">[ 03 ]</span><h2 id="skills-title">HABILIDADES</h2><span class="heading-rule"></span></div>
+        <div class="skills-grid">
+          <div class="skill-group"><div class="skill-group-head"><span aria-hidden="true">{ }</span><h3>LINGUAGENS</h3></div><ul><li>Python</li><li>Java</li><li>JavaScript</li><li>TypeScript</li><li>HTML & CSS</li><li>SQL</li><li>C</li></ul></div>
+          <div class="skill-group"><div class="skill-group-head"><span aria-hidden="true">◩</span><h3>FRAMEWORKS & WEB</h3></div><ul><li>Django</li><li>Spring Boot</li><li>Angular</li><li>Bootstrap</li><li>SCSS</li></ul></div>
+          <div class="skill-group"><div class="skill-group-head"><span aria-hidden="true">▤</span><h3>DADOS & FERRAMENTAS</h3></div><ul><li>PostgreSQL</li><li>MySQL</li><li>Git & GitHub</li><li>Docker</li><li>Linux</li><li>Jira & Trello</li></ul></div>
+          <div class="skill-group"><div class="skill-group-head"><span aria-hidden="true">↗</span><h3>PRÁTICAS</h3></div><ul><li>Scrum</li><li>Kanban</li><li>Testes de software</li><li>Design responsivo</li><li>Integração contínua</li></ul></div>
+        </div>
+      </section>
+
+      <section id="experience" class="section shell" aria-labelledby="experience-title">
+        <div class="section-heading"><span class="section-index">[ 04 ]</span><h2 id="experience-title">EXPERIÊNCIAS</h2><span class="heading-rule"></span></div>
+        <div class="timeline">
+          <article class="experience-item"><div class="experience-date">ABR 2025 — MAR 2026</div><div class="experience-content"><p class="experience-org">WEB ACADEMY · TRAINING AND RESEARCH</p><h3>Monitor de Iniciação Científica</h3><p>Pesquisei a inserção profissional de egressos do Web Academy e acompanhei alunos nas atividades do curso de capacitação.</p></div></article>
+          <article class="experience-item"><div class="experience-date">JUN 2025 — OUT 2025</div><div class="experience-content"><p class="experience-org">PROPEG / UFAC</p><h3>Desenvolvedor Web Full-Stack</h3><p>Desenvolvi uma plataforma em Django e PostgreSQL para criação, aprovação e gerenciamento de projetos de pesquisa, com consulta pública e interface responsiva.</p></div></article>
+          <article class="experience-item"><div class="experience-date">DEZ 2024 — MAR 2025</div><div class="experience-content"><p class="experience-org">TATE / SEFAZ-AC</p><h3>Desenvolvedor Front-End</h3><p>Implementei as páginas e a busca da plataforma de acórdãos em Angular, TypeScript e Bootstrap. Realizei testes unitários, de integração e funcionais.</p></div></article>
+          <article class="experience-item"><div class="experience-date">DEZ 2023 — AGO 2024</div><div class="experience-content"><p class="experience-org">CGU / ACRE</p><h3>Estagiário de TI</h3><p>Prestei suporte a usuários e equipamentos, resolvi problemas de rede e organizei dados e documentos para as equipes de auditoria.</p></div></article>
+        </div>
+      </section>
+
+      <section id="contact" class="section shell contact-section" aria-labelledby="contact-title">
+        <div class="section-heading"><span class="section-index">[ 05 ]</span><h2 id="contact-title">CONTATOS</h2><span class="heading-rule"></span></div>
+        <div class="contact-panel"><div><p class="eyebrow">VAMOS CONVERSAR?</p><h3>Tem um projeto em mente?</h3><p>Estou aberto a oportunidades e colaborações em desenvolvimento web. Entre em contato pelo canal que preferir.</p></div><a class="button button-primary" href="mailto:d.moura250304@gmail.com">Enviar e-mail <span aria-hidden="true">↗</span></a></div>
+        <div class="contact-links"><a href="mailto:d.moura250304@gmail.com"><span>E-MAIL</span><strong>d.moura250304@gmail.com</strong><span aria-hidden="true">↗</span></a><a href="https://github.com/douglas-ma" target="_blank" rel="noopener noreferrer"><span>GITHUB</span><strong>github.com/douglas-ma</strong><span aria-hidden="true">↗</span></a><a href="https://linkedin.com/in/douglas-ma/" target="_blank" rel="noopener noreferrer"><span>LINKEDIN</span><strong>linkedin.com/in/douglas-ma</strong><span aria-hidden="true">↗</span></a><a href="tel:+5568992044482"><span>TELEFONE</span><strong>(68) 99204-4482</strong><span aria-hidden="true">↗</span></a></div>
+      </section>
+    </main>
+    <footer class="site-footer shell"><span>© <span id="year">2026</span> Douglas Araújo</span><a href="#top">Voltar ao topo ↑</a></footer>
+  </body>
+</html>
