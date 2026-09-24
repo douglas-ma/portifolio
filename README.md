@@ -10,7 +10,7 @@ Portfólio pessoal de Douglas Araújo, desenvolvedor full-stack. O site reúne p
 
 | Seção | Conteúdo |
 | --- | --- |
-| Projetos | Três aplicações acadêmicas e institucionais, com tecnologias e links para os repositórios disponíveis. |
+| Projetos | Streak Basket em destaque e três aplicações acadêmicas e institucionais, com links para jogar ou acessar o código. |
 | Sobre Mim | Foto, apresentação profissional e formação na UFAC. |
 | Habilidades | Linguagens, frameworks, ferramentas e práticas com ícones e cores no hover. |
 | Experiências | Atuação no Web Academy, PROPEG/UFAC, TATE/SEFAZ-AC e CGU/AC. |
@@ -31,7 +31,7 @@ O site é estático e não precisa de instalação de dependências para funcion
 
 ```text
 .
-├── assets/icons/       # Ícones das habilidades e contatos
+├── assets/icons/       # Ícones das habilidades, contatos e projetos
 ├── assets/photos/      # Foto da seção Sobre Mim
 ├── dist/               # Arquivos prontos para publicação
 ├── index.html           # Conteúdo e seções
