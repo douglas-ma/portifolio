@@ -49,6 +49,8 @@ main,.site-footer{position:relative;z-index:1}
 
 .project-link img{display:block;width:17px;height:17px;flex:none;filter:brightness(0) invert(1);opacity:.82;transition:opacity .2s,transform .2s}
 .project-link:hover img,.project-link:focus-visible img{opacity:1;transform:scale(1.12)}
+.project-private{display:inline-flex;align-items:center;gap:7px;margin:-2px 0 18px;color:#b9bccc;font-size:13px;font-weight:700}
+.project-private img{display:block;width:17px;height:17px;flex:none}
 @media(prefers-reduced-motion:reduce){.project-link img{transition:none!important}}
 
 .project-card--featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,.38fr);gap:36px;min-height:310px;padding:30px 32px;border-color:#696c9b;background:radial-gradient(circle at 88% 22%,rgba(80,105,171,.2),transparent 36%),linear-gradient(125deg,#24273c,#1a2033 70%,#1a1c2a)}
