@@ -18,6 +18,8 @@ Portfólio pessoal de Douglas Araújo, desenvolvedor full-stack. O site reúne p
 
 O cabeçalho alterna entre o nome e a função com efeito de digitação. Pontos caem suavemente no fundo da página. As animações respeitam a preferência do sistema por movimento reduzido.
 
+O botão no cabeçalho alterna entre os temas claro e escuro e guarda a preferência no navegador. Sem uma escolha salva, o site acompanha o tema do sistema.
+
 ## Tecnologias
 
 - **HTML5** para a estrutura semântica.

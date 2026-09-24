@@ -2,6 +2,32 @@ const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
 const brandText = document.querySelector('.brand-text');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const themeToggle = document.querySelector('.theme-toggle');
+
+const applyTheme = (theme, savePreference = false) => {
+  const isLight = theme === 'light';
+  document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
+  themeToggle?.setAttribute('aria-pressed', String(isLight));
+  themeToggle?.setAttribute('aria-label', isLight ? 'Ativar modo escuro' : 'Ativar modo claro');
+  themeToggle?.setAttribute('title', isLight ? 'Ativar modo escuro' : 'Ativar modo claro');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', isLight ? '#f8f9fc' : '#11131c');
+  document.dispatchEvent(new Event('portfolio-themechange'));
+  if (savePreference) {
+    try { localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark'); } catch { /* A escolha permanece ativa nesta visita. */ }
+  }
+};
+
+applyTheme(document.documentElement.dataset.theme);
+themeToggle?.addEventListener('click', () => {
+  applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light', true);
+});
+
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (event) => {
+  try {
+    if (localStorage.getItem('portfolio-theme')) return;
+  } catch { /* Sem armazenamento, acompanhar o sistema. */ }
+  applyTheme(event.matches ? 'light' : 'dark');
+});
 
 if (brandText) {
   const phrases = ['Douglas Araújo', 'Desenvolvedor Full-Stack'];
@@ -66,8 +92,9 @@ if (dotsCanvas && dotsContext) {
 
   const paintDots = () => {
     dotsContext.clearRect(0, 0, width, height);
+    const dotColor = document.documentElement.dataset.theme === 'light' ? '90, 95, 154' : '178, 184, 218';
     for (const dot of dots) {
-      dotsContext.fillStyle = `rgba(178, 184, 218, ${dot.opacity})`;
+      dotsContext.fillStyle = `rgba(${dotColor}, ${dot.opacity})`;
       dotsContext.beginPath();
       dotsContext.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
       dotsContext.fill();
@@ -109,6 +136,7 @@ if (dotsCanvas && dotsContext) {
 
   window.addEventListener('resize', resizeDots);
   document.addEventListener('visibilitychange', updateAnimation);
+  document.addEventListener('portfolio-themechange', paintDots);
   reducedMotion.addEventListener('change', updateAnimation);
   resizeDots();
 }
