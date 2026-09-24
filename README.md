@@ -11,10 +11,10 @@ Portfólio pessoal de Douglas Araújo, desenvolvedor full-stack. O site reúne p
 | Seção | Conteúdo |
 | --- | --- |
 | Projetos | Três aplicações acadêmicas e institucionais, com tecnologias e links para os repositórios disponíveis. |
-| Sobre Mim | Apresentação profissional e formação na UFAC. |
+| Sobre Mim | Foto, apresentação profissional e formação na UFAC. |
 | Habilidades | Linguagens, frameworks, ferramentas e práticas com ícones e cores no hover. |
 | Experiências | Atuação no Web Academy, PROPEG/UFAC, TATE/SEFAZ-AC e CGU/AC. |
-| Contatos | E-mail, GitHub, LinkedIn e telefone. |
+| Contatos | E-mail, LinkedIn e GitHub. |
 
 O cabeçalho alterna entre o nome e a função com efeito de digitação. Pontos caem suavemente no fundo da página. As animações respeitam a preferência do sistema por movimento reduzido.
 
@@ -31,7 +31,8 @@ O site é estático e não precisa de instalação de dependências para funcion
 
 ```text
 .
-├── assets/icons/       # SVGs das habilidades e licença do Devicon
+├── assets/icons/       # Ícones das habilidades e contatos
+├── assets/photos/      # Foto da seção Sobre Mim
 ├── dist/               # Arquivos prontos para publicação
 ├── index.html           # Conteúdo e seções
 ├── styles.css           # Visual e responsividade
@@ -42,7 +43,7 @@ O site é estático e não precisa de instalação de dependências para funcion
 
 As informações profissionais foram adaptadas do currículo de Douglas Araújo. O PDF original não faz parte deste repositório.
 
-Os logotipos de tecnologias vêm do [Devicon](https://github.com/devicons/devicon) (MIT); a licença está em [`assets/icons/DEVICON-LICENSE.txt`](assets/icons/DEVICON-LICENSE.txt). Os ícones de SQL, Scrum, Kanban, testes, design responsivo e integração contínua foram criados para este site. As marcas pertencem aos respectivos titulares.
+Os logotipos de tecnologias vêm do [Devicon](https://github.com/devicons/devicon) (MIT); a licença está em [`assets/icons/DEVICON-LICENSE.txt`](assets/icons/DEVICON-LICENSE.txt). Os ícones de SQL, Scrum, Kanban, testes, design responsivo, integração contínua, e-mail e LinkedIn foram criados para este site. As marcas pertencem aos respectivos titulares.
 
 ## Contato
 
