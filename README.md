@@ -4,7 +4,7 @@ Portfólio pessoal de Douglas Araújo, desenvolvedor full-stack. O site reúne p
 
 **[Acessar o portfólio](https://douglas-araujo-portfolio-2026.d-moura250304.chatgpt.site)** · **[GitHub](https://github.com/douglas-ma)** · **[LinkedIn](https://linkedin.com/in/douglas-ma/)**
 
-> A versão hospedada atualmente exige login com ChatGPT. Para visualizar sem autenticação, execute o projeto localmente.
+> A versão hospedada atualmente exige login com ChatGPT.
 
 ## O que você encontra
 
@@ -27,37 +27,16 @@ O cabeçalho alterna entre o nome e a função com efeito de digitação. Pontos
 
 O site é estático e não precisa de instalação de dependências para funcionar.
 
-## Executar localmente
-
-```bash
-git clone https://github.com/douglas-ma/portifolio.git
-cd portifolio
-python -m http.server 8765
-```
-
-Abra [http://127.0.0.1:8765/](http://127.0.0.1:8765/) no navegador. Também é possível abrir `index.html` diretamente, mas o servidor local reproduz melhor a hospedagem.
-
 ## Estrutura do projeto
 
 ```text
 .
 ├── assets/icons/       # SVGs das habilidades e licença do Devicon
-├── dist/               # Arquivos publicados pelo Sites
-├── .openai/hosting.json
+├── dist/               # Arquivos prontos para publicação
 ├── index.html           # Conteúdo e seções
 ├── styles.css           # Visual e responsividade
 └── script.js            # Interações e animações
 ```
-
-Edite os arquivos na raiz do projeto. Antes de publicar, sincronize a pasta `dist/`:
-
-```powershell
-Copy-Item index.html, styles.css, script.js -Destination dist -Force
-New-Item -ItemType Directory -Path dist/assets/icons -Force | Out-Null
-Copy-Item assets/icons/* -Destination dist/assets/icons -Force
-```
-
-O Sites publica `dist/`, conforme `.openai/hosting.json`.
 
 ## Conteúdo e créditos
 
