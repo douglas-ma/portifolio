@@ -12,7 +12,6 @@
     'Sou desenvolvedor full-stack com 2 anos de experiência em software web. Já trabalhei em plataformas para pesquisa, educação e gestão pública; fora desse contexto, criei o Streak Basket, um jogo de draft e partidas de basquete.': 'I am a full-stack developer with 2 years of experience building web software. I have worked on platforms for research, education and public administration; I also created Streak Basket, a basketball draft and game simulator.',
     'Explorar projetos': 'Explore projects',
     'Falar comigo': 'Get in touch',
-    'DOUGLAS ARAÚJO · RETRATO ILUSTRADO': 'DOUGLAS ARAÚJO · ILLUSTRATED PORTRAIT',
     'SELEÇÃO DE TRABALHOS ↓': 'SELECTED WORK ↓',
     'DESLIZE PARA CONHECER': 'SCROLL TO EXPLORE',
     '01 / TRABALHOS': '01 / WORK',
