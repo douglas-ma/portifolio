@@ -2,9 +2,7 @@
 
 Portfólio pessoal de Douglas Araújo, desenvolvedor full-stack. O site reúne projetos, trajetória profissional, formação, habilidades e formas de contato em uma página responsiva.
 
-**[Acessar o portfólio](https://douglas-araujo-portfolio-2026.d-moura250304.chatgpt.site)** · **[GitHub](https://github.com/douglas-ma)** · **[LinkedIn](https://linkedin.com/in/douglas-ma/)**
-
-> A versão hospedada atualmente exige login com ChatGPT.
+**[Acessar o portfólio](https://douglas-araujo-portfolio.vercel.app/)** · **[GitHub](https://github.com/douglas-ma)** · **[LinkedIn](https://linkedin.com/in/douglas-ma/)**
 
 ## O que você encontra
 
@@ -38,7 +36,8 @@ O site é estático e não precisa de instalação de dependências para funcion
 ├── dist/               # Arquivos prontos para publicação
 ├── index.html           # Conteúdo e seções
 ├── styles.css           # Visual e responsividade
-└── script.js            # Interações e animações
+├── script.js            # Interações e animações
+└── vercel.json          # Diretório publicado na Vercel
 ```
 
 ## Conteúdo e créditos
