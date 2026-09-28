@@ -8,21 +8,25 @@ Portfólio pessoal de Douglas Araújo, desenvolvedor full-stack. O site reúne p
 
 | Seção | Conteúdo |
 | --- | --- |
-| Projetos | Streak Basket em destaque e três aplicações acadêmicas e institucionais. Projetos com código público têm link; os repositórios institucionais privados são identificados com um cadeado. |
+| Projetos | Streak Basket em destaque, este portfólio e três aplicações acadêmicas e institucionais. Os projetos têm acesso à aplicação, ao código público ou à indicação de repositório privado conforme o caso. |
 | Sobre Mim | Foto, apresentação profissional e formação na UFAC. |
-| Habilidades | Linguagens, frameworks, ferramentas e práticas com ícones e cores no hover. |
+| Habilidades | Linguagens, frameworks, ferramentas, deploy e desenvolvimento mobile. Cada tecnologia abre seu site oficial em uma nova aba. |
 | Experiências | Atuação no Web Academy, PROPEG/UFAC, TATE/SEFAZ-AC e CGU/AC. |
 | Contatos | E-mail, LinkedIn e GitHub. |
 
-O cabeçalho alterna entre o nome e a função com efeito de digitação. Pontos caem suavemente no fundo da página. As animações respeitam a preferência do sistema por movimento reduzido.
+A abertura apresenta um retrato ilustrado a partir da foto do autor. O cabeçalho alterna entre o nome e a função com efeito de digitação. Pontos caem suavemente no fundo da página. As animações respeitam a preferência do sistema por movimento reduzido.
 
-O botão no cabeçalho alterna entre os temas claro e escuro e guarda a preferência no navegador. Sem uma escolha salva, o site acompanha o tema do sistema.
+Os controles no cabeçalho alternam entre os temas claro e escuro e entre português e inglês. As preferências ficam salvas no navegador. O tema claro e o português aparecem por padrão.
+
+O Streak Basket reúne TypeScript, React Native, Expo e Supabase, com desenvolvimento mobile no Android Studio. Kotlin aparece apenas na seção de habilidades.
+
+Os projetos com capturas oferecem uma galeria que troca as telas automaticamente, com controles para avançar, voltar ou pausar. A troca automática respeita a preferência por movimento reduzido. O próprio portfólio pode ser visualizado em uma prévia interativa.
 
 ## Tecnologias
 
 - **HTML5** para a estrutura semântica.
 - **CSS3** para o layout responsivo, a paleta e as transições.
-- **JavaScript** para a navegação mobile, o texto animado e as partículas em canvas.
+- **JavaScript** para a navegação mobile, as prévias de projetos, o texto animado e as partículas em canvas.
 - **SVG** para os ícones das habilidades, armazenados no próprio projeto.
 
 O site é estático e não precisa de instalação de dependências para funcionar.
@@ -32,10 +36,12 @@ O site é estático e não precisa de instalação de dependências para funcion
 ```text
 .
 ├── assets/icons/       # Ícones das habilidades, contatos e projetos
-├── assets/photos/      # Foto da seção Sobre Mim
+├── assets/photos/      # Foto e retrato ilustrado
+├── assets/previews/    # Capturas autorizadas das aplicações
 ├── dist/               # Arquivos prontos para publicação
 ├── index.html           # Conteúdo e seções
 ├── styles.css           # Visual e responsividade
+├── i18n.js              # Textos em português e inglês
 ├── script.js            # Interações e animações
 └── vercel.json          # Diretório publicado na Vercel
 ```
@@ -44,7 +50,7 @@ O site é estático e não precisa de instalação de dependências para funcion
 
 As informações profissionais foram adaptadas do currículo de Douglas Araújo. O PDF original não faz parte deste repositório.
 
-Os logotipos de tecnologias vêm do [Devicon](https://github.com/devicons/devicon) (MIT); a licença está em [`assets/icons/DEVICON-LICENSE.txt`](assets/icons/DEVICON-LICENSE.txt). Os ícones de SQL, Scrum, Kanban, testes, design responsivo, integração contínua, e-mail e LinkedIn foram criados para este site. As marcas pertencem aos respectivos titulares.
+Parte dos logotipos de tecnologias vem do [Devicon](https://github.com/devicons/devicon) (MIT); a licença está em [`assets/icons/DEVICON-LICENSE.txt`](assets/icons/DEVICON-LICENSE.txt). Os demais ícones e as bandeiras foram desenhados para este site. As marcas pertencem aos respectivos titulares.
 
 ## Contato
 

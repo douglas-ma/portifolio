@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#11131c" />
+    <meta name="theme-color" content="#f5f4ef" />
     <script>
       try {
         const savedTheme = localStorage.getItem('portfolio-theme');
-        document.documentElement.dataset.theme = savedTheme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.dataset.theme = savedTheme || 'light';
       } catch {
-        document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = 'light';
       }
     </script>
     <meta name="description" content="Portfólio de Douglas Araújo, desenvolvedor full-stack. Projetos, habilidades, experiências e contato." />
@@ -17,9 +17,10 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%2311131c'/%3E%3Cpath d='M13 17h16c14 0 22 7 22 15S43 47 29 47H13z' fill='none' stroke='%23a7a9fa' stroke-width='6'/%3E%3Cpath d='M25 29h20M35 19v26' stroke='%23f1c66e' stroke-width='4'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=5" />
-    <script defer src="script.js?v=2"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=8" />
+    <script defer src="i18n.js?v=1"></script>
+    <script defer src="script.js?v=5"></script>
   </head>
   <body id="top">
     <canvas id="falling-dots" aria-hidden="true"></canvas>
@@ -41,80 +42,71 @@
           <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
           <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/></svg>
         </button>
+        <div class="language-switch" role="group" aria-label="Idioma do portfólio">
+          <button type="button" data-lang="pt" aria-pressed="true" aria-label="Português (Brasil)"><img src="assets/icons/flag-br.svg" alt="" />PT</button>
+          <button type="button" data-lang="en" aria-pressed="false" aria-label="English (United States)"><img src="assets/icons/flag-us.svg" alt="" />EN</button>
+        </div>
       </div>
     </header>
 
     <main id="main">
       <section class="hero shell" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> Olá, eu me chamo Douglas!</p>
-          <h1 id="hero-title">Desenvolvo experiências web <span>de ponta a ponta.</span></h1>
-          <p class="hero-description">Sou desenvolvedor full-stack com experiência em aplicações para pesquisa, educação e gestão pública. Transformo processos complexos em ferramentas mais simples de usar.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Ver projetos <span aria-hidden="true">↗</span></a>
-            <a class="button button-ghost" href="#contact">Entrar em contato</a>
-          </div>
-          <p class="hero-meta">RIO BRANCO, ACRE <span aria-hidden="true">/</span> FULL-STACK DEVELOPER</p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-          <div class="code-window">
-            <div class="window-bar"><i></i><i></i><i></i><span>douglas.dev</span></div>
-            <div class="code-lines">
-              <p><span class="line-no">01</span> <span class="code-purple">const</span> developer = {</p>
-              <p><span class="line-no">02</span> &nbsp;name: <span class="code-yellow">'Douglas Araújo'</span>,</p>
-              <p><span class="line-no">03</span> &nbsp;focus: <span class="code-yellow">'full-stack'</span>,</p>
-              <p><span class="line-no">04</span> &nbsp;stack: [<span class="code-green">'Django'</span>,</p>
-              <p><span class="line-no">05</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">'Angular'</span>,</p>
-              <p><span class="line-no">06</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">'Spring Boot'</span>],</p>
-              <p><span class="line-no">07</span> &nbsp;build: <span class="code-purple">'soluções úteis'</span></p>
-              <p><span class="line-no">08</span> }</p>
+        <div class="hero-kicker"><span>PORTFÓLIO / 2026</span><span>RIO BRANCO · ACRE</span></div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">DESENVOLVEDOR FULL-STACK</p>
+            <h1 id="hero-title">Douglas<br /><em>Araújo.</em></h1>
+            <p class="hero-description">Sou desenvolvedor full-stack com 2 anos de experiência em software web. Já trabalhei em plataformas para pesquisa, educação e gestão pública; fora desse contexto, criei o Streak Basket, um jogo de draft e partidas de basquete.</p>
+            <div class="hero-actions">
+              <a class="hero-link" href="#projects">Explorar projetos <span aria-hidden="true">↘</span></a>
+              <a class="hero-link hero-link--quiet" href="#contact">Falar comigo <span aria-hidden="true">↗</span></a>
             </div>
-            <div class="terminal-line"><span>›</span> pronto para o próximo projeto<span class="cursor">_</span></div>
           </div>
-          <span class="art-cross art-cross-one">+</span><span class="art-cross art-cross-two">+</span>
+          <figure class="hero-aside">
+            <img class="hero-portrait" src="assets/photos/douglas-ilustrado.png" alt="Retrato ilustrado de Douglas Araújo, sorrindo com camisa azul e óculos" width="1121" height="1403" decoding="async" />
+            <figcaption>DOUGLAS ARAÚJO · RETRATO ILUSTRADO</figcaption>
+          </figure>
         </div>
+        <div class="hero-bottom"><span>SELEÇÃO DE TRABALHOS ↓</span><span>DESLIZE PARA CONHECER</span></div>
       </section>
 
       <section id="projects" class="section shell" aria-labelledby="projects-title">
-        <div class="section-heading"><span class="section-index">[ 01 ]</span><h2 id="projects-title">PROJETOS</h2><span class="heading-rule"></span></div>
-        <div class="project-grid">
-          <article class="project-card project-card--featured">
+        <div class="section-heading"><span class="section-index">01 / TRABALHOS</span><h2 id="projects-title">Projetos<span class="heading-period">.</span></h2><span class="section-note">UMA SELEÇÃO DO QUE CONSTRUÍ</span></div>
+        <div class="project-list">
+          <article class="project-featured">
             <div class="featured-content">
-              <div class="project-top"><span class="project-icon project-icon--basketball" aria-hidden="true"><img src="assets/icons/basketball.svg" alt="" /></span><span class="card-number">01 / 04</span></div>
-              <p class="project-category">JOGO INTERATIVO · DESTAQUE</p>
-              <h3>Streak Basket</h3>
-              <p>Simulador interativo de draft e partidas de basquete. Monte seu elenco por posição, acompanhe os atributos da equipe e tente subir no ranking.</p>
-              <div class="card-bottom"><ul class="tags" aria-label="Recursos"><li>Draft</li><li>Partidas</li><li>Ranking</li></ul><a class="project-link project-link--play" href="https://streakbasket.vercel.app/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/play.svg" alt="" />Jogar agora <span aria-hidden="true">↗</span></a><span class="project-context">PROJETO AUTORAL · DISPONÍVEL ONLINE</span></div>
+              <p class="project-category">01 / PRODUTO AUTORAL · JOGO INTERATIVO</p>
+              <h3>Streak<br /><em>Basket.</em></h3>
+              <p>Jogo de draft e simulação de partidas de basquete para web e mobile. Monte seu elenco, dispute uma temporada e acompanhe sua posição no ranking.</p>
+              <div class="featured-footer"><ul class="tags" aria-label="Tecnologias"><li>TypeScript</li><li>React Native</li><li>Expo</li><li>Supabase</li><li>Android Studio</li></ul><div class="featured-actions"><button class="preview-trigger" type="button" data-preview-gallery="streak" data-preview-title="Streak Basket" aria-label="Ver telas do Streak Basket"><img src="assets/icons/preview.svg" alt="" />Ver telas</button><a class="project-link project-link--play" href="https://streakbasket.vercel.app/" target="_blank" rel="noopener noreferrer"><img src="assets/icons/play.svg" alt="" />Jogar agora <span aria-hidden="true">↗</span></a></div></div>
             </div>
-            <div class="featured-art" aria-hidden="true"><span class="featured-orbit"></span><img src="assets/icons/basketball.svg" alt="" /></div>
+            <div class="featured-graphic" aria-hidden="true"><span class="featured-label">STREAK<br />BASKET</span><img src="assets/icons/basketball.svg" alt="" /><span class="featured-graphic-foot">DRAFT / PARTIDAS / RANKING</span></div>
           </article>
-          <article class="project-card">
-            <div class="project-top"><span class="project-icon" aria-hidden="true">⌘</span><span class="card-number">02 / 04</span></div>
-            <p class="project-category">PESQUISA & GESTÃO</p>
-            <h3>Plataforma de Projetos Institucionais</h3>
-            <p>Centraliza a criação, aprovação e consulta de projetos de pesquisa da PROPEG/UFAC, simplificando o trâmite antes realizado no SEI.</p>
-            <div class="card-bottom"><ul class="tags" aria-label="Tecnologias"><li>Python</li><li>Django</li><li>PostgreSQL</li></ul><span class="project-private"><img src="assets/icons/lock.svg" alt="" />Repositório privado</span><span class="project-context">PROPEG / UFAC · 2025</span></div>
+          <article class="project-row project-row--portfolio">
+            <div class="project-row-index"><span>02</span><span>2026</span></div>
+            <div class="project-row-main"><p class="project-category">PROJETO AUTORAL · IDENTIDADE DIGITAL</p><h3>Este portfólio</h3><p>Um espaço para apresentar meus projetos e minha trajetória com uma identidade visual própria, layout responsivo, temas claro e escuro e interações discretas.</p></div>
+            <div class="project-row-side"><ul class="tags" aria-label="Tecnologias"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul><div class="project-actions"><button class="preview-trigger" type="button" data-preview-url="./?embedded=1#top" data-preview-title="Este portfólio" aria-label="Ver tela deste portfólio"><img src="assets/icons/preview.svg" alt="" />Ver tela</button><a class="project-link" href="https://github.com/douglas-ma/portifolio" target="_blank" rel="noopener noreferrer"><img src="assets/icons/github.svg" alt="" />Ver código <span aria-hidden="true">↗</span></a></div></div>
           </article>
-          <article class="project-card">
-            <div class="project-top"><span class="project-icon" aria-hidden="true">▦</span><span class="card-number">03 / 04</span></div>
-            <p class="project-category">EDUCAÇÃO & ORGANIZAÇÃO</p>
-            <h3>Sistema de Gestão de Atividades Docentes</h3>
-            <p>Aplicação web que reúne aulas, reuniões, conselhos e comprovantes das atividades acadêmicas de docentes em um único lugar.</p>
-            <div class="card-bottom"><ul class="tags" aria-label="Tecnologias"><li>Python</li><li>Django</li><li>PostgreSQL</li></ul><a class="project-link" href="https://github.com/Darkyelino/Trabs-Engenharia-Software" target="_blank" rel="noopener noreferrer"><img src="assets/icons/github.svg" alt="" />Ver no GitHub <span aria-hidden="true">↗</span></a><span class="project-context">UFAC · 2025</span></div>
+          <article class="project-row">
+            <div class="project-row-index"><span>03</span><span>2025</span></div>
+            <div class="project-row-main"><p class="project-category">PESQUISA &amp; GESTÃO · PROPEG / UFAC</p><h3>Plataforma de Projetos Institucionais</h3><p>Centraliza a criação, aprovação e consulta de projetos de pesquisa da PROPEG/UFAC, simplificando o trâmite antes realizado no SEI.</p></div>
+            <div class="project-row-side"><ul class="tags" aria-label="Tecnologias"><li>Python</li><li>Django</li><li>PostgreSQL</li></ul><div class="project-actions"><button class="preview-trigger" type="button" data-preview-gallery="propeg" data-preview-title="Plataforma de Projetos Institucionais" aria-label="Ver telas da plataforma PROPEG"><img src="assets/icons/preview.svg" alt="" />Ver telas</button><span class="project-private"><img src="assets/icons/lock.svg" alt="" />Repositório privado</span></div></div>
           </article>
-          <article class="project-card">
-            <div class="project-top"><span class="project-icon" aria-hidden="true">◫</span><span class="card-number">04 / 04</span></div>
-            <p class="project-category">GESTÃO PÚBLICA</p>
-            <h3>Plataforma de Gerenciamento de Acórdãos</h3>
-            <p>Sistema para organizar acórdãos e processos do TATE/SEFAZ-AC, com interface responsiva e busca por palavras-chave.</p>
-            <div class="card-bottom"><ul class="tags" aria-label="Tecnologias"><li>Angular</li><li>Spring Boot</li><li>TypeScript</li></ul><span class="project-private"><img src="assets/icons/lock.svg" alt="" />Repositório privado</span><span class="project-context">TATE / SEFAZ-AC · 2024–2025</span></div>
+          <article class="project-row">
+            <div class="project-row-index"><span>04</span><span>2025</span></div>
+            <div class="project-row-main"><p class="project-category">EDUCAÇÃO &amp; ORGANIZAÇÃO · UFAC</p><h3>Sistema de Gestão de Atividades Docentes</h3><p>Aplicação web que reúne aulas, reuniões, conselhos e comprovantes das atividades acadêmicas de docentes em um único lugar.</p></div>
+            <div class="project-row-side"><ul class="tags" aria-label="Tecnologias"><li>Python</li><li>Django</li><li>PostgreSQL</li></ul><a class="project-link" href="https://github.com/Darkyelino/Trabs-Engenharia-Software" target="_blank" rel="noopener noreferrer"><img src="assets/icons/github.svg" alt="" />Ver no GitHub <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project-row">
+            <div class="project-row-index"><span>05</span><span>2024—25</span></div>
+            <div class="project-row-main"><p class="project-category">GESTÃO PÚBLICA · TATE / SEFAZ-AC</p><h3>Plataforma de Gerenciamento de Acórdãos</h3><p>Sistema para organizar acórdãos e processos do TATE/SEFAZ-AC, com interface responsiva e busca por palavras-chave.</p></div>
+            <div class="project-row-side"><ul class="tags" aria-label="Tecnologias"><li>Angular</li><li>Spring Boot</li><li>TypeScript</li></ul><div class="project-actions"><button class="preview-trigger" type="button" data-preview-gallery="tate" data-preview-title="Plataforma de Gerenciamento de Acórdãos" aria-label="Ver telas da plataforma TATE/SEFAZ"><img src="assets/icons/preview.svg" alt="" />Ver telas</button><span class="project-private"><img src="assets/icons/lock.svg" alt="" />Repositório privado</span></div></div>
           </article>
         </div>
       </section>
 
       <section id="about" class="section shell" aria-labelledby="about-title">
-        <div class="section-heading"><span class="section-index">[ 02 ]</span><h2 id="about-title">SOBRE MIM</h2><span class="heading-rule"></span></div>
+        <div class="section-heading"><span class="section-index">02 / PESSOA</span><h2 id="about-title">Sobre mim<span class="heading-period">.</span></h2><span class="section-note">QUEM ESTÁ POR TRÁS DO CÓDIGO</span></div>
         <div class="about-layout">
           <div class="about-main">
             <p class="about-lead">Gosto de construir software que resolve problemas reais — da interface que as pessoas usam à lógica que faz tudo funcionar.</p>
@@ -122,7 +114,7 @@
             <p>Sou bacharel em Sistemas de Informação pela UFAC e pós-graduando no curso de Inteligência Artificial para Engenharia de Testes de Software (IARTES).</p>
           </div>
           <div class="about-aside">
-            <figure class="about-photo"><img src="assets/photos/douglas-araujo.jpg" alt="Douglas Araújo sorrindo, vestindo camisa azul" width="2133" height="2671" loading="lazy" decoding="async" /></figure>
+            <figure class="about-photo"><img src="assets/photos/douglas-araujo.jpg?v=2" alt="Douglas Araújo em sua formatura, vestindo beca e acenando" width="630" height="760" loading="lazy" decoding="async" /></figure>
             <div class="education-card"><span class="small-label">FORMAÇÃO</span><strong>Pós-graduação lato sensu em Engenharia de Testes de Software com IA</strong><span>UFAC · Em andamento</span></div>
             <div class="education-card"><span class="small-label">GRADUAÇÃO</span><strong>Bacharelado em Sistemas de Informação</strong><span>UFAC · 2022–2026</span></div>
           </div>
@@ -130,58 +122,78 @@
       </section>
 
       <section id="skills" class="section shell" aria-labelledby="skills-title">
-        <div class="section-heading"><span class="section-index">[ 03 ]</span><h2 id="skills-title">HABILIDADES</h2><span class="heading-rule"></span></div>
+        <div class="section-heading"><span class="section-index">03 / REPERTÓRIO</span><h2 id="skills-title">Habilidades<span class="heading-period">.</span></h2><span class="section-note">FERRAMENTAS QUE USO PARA CONSTRUIR</span></div>
         <div class="skills-grid">
           <div class="skill-group">
-            <div class="skill-group-head"><span aria-hidden="true">{ }</span><h3>LINGUAGENS</h3></div>
+            <div class="skill-group-head"><span aria-hidden="true">01</span><h3>LINGUAGENS</h3></div>
             <ul>
-              <li style="--skill-accent:#5A9FD4;--skill-accent-2:#FFD43B"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/python.svg" alt="" /></span>Python</li>
-              <li style="--skill-accent:#E76F51;--skill-accent-2:#7DA6CC"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/java.svg" alt="" /></span>Java</li>
-              <li style="--skill-accent:#F7DF1E;--skill-accent-2:#E9C84C"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/javascript.svg" alt="" /></span>JavaScript</li>
-              <li style="--skill-accent:#3178C6;--skill-accent-2:#78B9EB"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/typescript.svg" alt="" /></span>TypeScript</li>
-              <li style="--skill-accent:#E34F26;--skill-accent-2:#1572B6"><span class="skill-icon skill-icon--pair" aria-hidden="true"><img src="assets/icons/html5.svg" alt="" /><img src="assets/icons/css3.svg" alt="" /></span>HTML &amp; CSS</li>
-              <li style="--skill-accent:#7695E9;--skill-accent-2:#B8C5F6"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/sql.svg" alt="" /></span>SQL</li>
-              <li style="--skill-accent:#A8B9CC;--skill-accent-2:#8294A8"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/c.svg" alt="" /></span>C</li>
+              <li style="--skill-accent:#5A9FD4"><a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" data-skill-name="Python"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/python.svg" alt="" /></span>Python<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#E76F51"><a href="https://dev.java/" target="_blank" rel="noopener noreferrer" data-skill-name="Java"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/java.svg" alt="" /></span>Java<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#F7DF1E"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" data-skill-name="JavaScript"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/javascript.svg" alt="" /></span>JavaScript<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#3178C6"><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" data-skill-name="TypeScript"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/typescript.svg" alt="" /></span>TypeScript<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#E34F26"><a href="https://html.spec.whatwg.org/dev/" target="_blank" rel="noopener noreferrer" data-skill-name="HTML"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/html5.svg" alt="" /></span>HTML<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#1572B6"><a href="https://www.w3.org/Style/CSS/" target="_blank" rel="noopener noreferrer" data-skill-name="CSS"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/css3.svg" alt="" /></span>CSS<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#7695E9"><a href="https://www.iso.org/standard/76584.html" target="_blank" rel="noopener noreferrer" data-skill-name="SQL"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/sql.svg" alt="" /></span>SQL<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#A8B9CC"><a href="https://www.iso.org/standard/82075.html" target="_blank" rel="noopener noreferrer" data-skill-name="C"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/c.svg" alt="" /></span>C<span class="skill-external" aria-hidden="true">↗</span></a></li>
             </ul>
           </div>
           <div class="skill-group">
-            <div class="skill-group-head"><span aria-hidden="true">◩</span><h3>FRAMEWORKS &amp; WEB</h3></div>
+            <div class="skill-group-head"><span aria-hidden="true">02</span><h3>FRAMEWORKS &amp; WEB</h3></div>
             <ul>
-              <li style="--skill-accent:#44B78B;--skill-accent-2:#0C4B33"><span class="skill-icon" aria-hidden="true"><img class="icon-light" src="assets/icons/django.svg" alt="" /></span>Django</li>
-              <li style="--skill-accent:#6DB33F;--skill-accent-2:#A7D985"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/spring.svg" alt="" /></span>Spring Boot</li>
-              <li style="--skill-accent:#E75A70;--skill-accent-2:#C3002F"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/angular.svg" alt="" /></span>Angular</li>
-              <li style="--skill-accent:#9467C7;--skill-accent-2:#BCA0E0"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/bootstrap.svg" alt="" /></span>Bootstrap</li>
-              <li style="--skill-accent:#CC6699;--skill-accent-2:#E9A3C6"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/sass.svg" alt="" /></span>SCSS</li>
+              <li style="--skill-accent:#44B78B"><a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer" data-skill-name="Django"><span class="skill-icon" aria-hidden="true"><img class="icon-light" src="assets/icons/django.svg" alt="" /></span>Django<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#6DB33F"><a href="https://spring.io/projects/spring-boot/" target="_blank" rel="noopener noreferrer" data-skill-name="Spring Boot"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/spring.svg" alt="" /></span>Spring Boot<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#E75A70"><a href="https://angular.dev/" target="_blank" rel="noopener noreferrer" data-skill-name="Angular"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/angular.svg" alt="" /></span>Angular<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#9467C7"><a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" data-skill-name="Bootstrap"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/bootstrap.svg" alt="" /></span>Bootstrap<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#CC6699"><a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer" data-skill-name="SCSS"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/sass.svg" alt="" /></span>SCSS<span class="skill-external" aria-hidden="true">↗</span></a></li>
             </ul>
           </div>
           <div class="skill-group">
-            <div class="skill-group-head"><span aria-hidden="true">▤</span><h3>DADOS &amp; FERRAMENTAS</h3></div>
+            <div class="skill-group-head"><span aria-hidden="true">03</span><h3>DADOS &amp; FERRAMENTAS</h3></div>
             <ul>
-              <li style="--skill-accent:#7290E8;--skill-accent-2:#4169E1"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/postgresql.svg" alt="" /></span>PostgreSQL</li>
-              <li style="--skill-accent:#7AA7C5;--skill-accent-2:#F29111"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/mysql.svg" alt="" /></span>MySQL</li>
-              <li style="--skill-accent:#F05032;--skill-accent-2:#D8D9E0"><span class="skill-icon skill-icon--pair" aria-hidden="true"><img src="assets/icons/git.svg" alt="" /><img class="icon-light" src="assets/icons/github.svg" alt="" /></span>Git &amp; GitHub</li>
-              <li style="--skill-accent:#2496ED;--skill-accent-2:#81C5F2"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/docker.svg" alt="" /></span>Docker</li>
-              <li style="--skill-accent:#F0C84A;--skill-accent-2:#E8E8EE"><span class="skill-icon" aria-hidden="true"><img class="icon-light" src="assets/icons/linux.svg" alt="" /></span>Linux</li>
-              <li style="--skill-accent:#2684FF;--skill-accent-2:#77A7F2"><span class="skill-icon skill-icon--pair" aria-hidden="true"><img src="assets/icons/jira.svg" alt="" /><img src="assets/icons/trello.svg" alt="" /></span>Jira &amp; Trello</li>
+              <li style="--skill-accent:#7290E8"><a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" data-skill-name="PostgreSQL"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/postgresql.svg" alt="" /></span>PostgreSQL<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#7AA7C5"><a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" data-skill-name="MySQL"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/mysql.svg" alt="" /></span>MySQL<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#3ECF8E"><a href="https://supabase.com/" target="_blank" rel="noopener noreferrer" data-skill-name="Supabase"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/supabase.svg" alt="" /></span>Supabase<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#F05032"><a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" data-skill-name="Git"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/git.svg" alt="" /></span>Git<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#8B91A9"><a href="https://github.com/" target="_blank" rel="noopener noreferrer" data-skill-name="GitHub"><span class="skill-icon" aria-hidden="true"><img class="icon-light" src="assets/icons/github.svg" alt="" /></span>GitHub<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#2496ED"><a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" data-skill-name="Docker"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/docker.svg" alt="" /></span>Docker<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#F0C84A"><a href="https://www.kernel.org/" target="_blank" rel="noopener noreferrer" data-skill-name="Linux"><span class="skill-icon" aria-hidden="true"><img class="icon-light" src="assets/icons/linux.svg" alt="" /></span>Linux<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#2684FF"><a href="https://www.atlassian.com/software/jira" target="_blank" rel="noopener noreferrer" data-skill-name="Jira"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/jira.svg" alt="" /></span>Jira<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#77A7F2"><a href="https://trello.com/" target="_blank" rel="noopener noreferrer" data-skill-name="Trello"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/trello.svg" alt="" /></span>Trello<span class="skill-external" aria-hidden="true">↗</span></a></li>
             </ul>
           </div>
           <div class="skill-group">
-            <div class="skill-group-head"><span aria-hidden="true">↗</span><h3>PRÁTICAS</h3></div>
+            <div class="skill-group-head"><span aria-hidden="true">04</span><h3>DEPLOY &amp; HOSPEDAGEM</h3></div>
             <ul>
-              <li style="--skill-accent:#B6A9F7;--skill-accent-2:#746BD1"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/scrum.svg" alt="" /></span>Scrum</li>
-              <li style="--skill-accent:#A8C7ED;--skill-accent-2:#5086C1"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/kanban.svg" alt="" /></span>Kanban</li>
-              <li style="--skill-accent:#74C69D;--skill-accent-2:#A8E0BD"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/tests.svg" alt="" /></span>Testes de software</li>
-              <li style="--skill-accent:#C084D6;--skill-accent-2:#D5B5F3"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/responsive.svg" alt="" /></span>Design responsivo</li>
-              <li style="--skill-accent:#E0A64F;--skill-accent-2:#F0CA81"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/ci.svg" alt="" /></span>Integração contínua</li>
+              <li style="--skill-accent:#6672E5"><a href="https://render.com/" target="_blank" rel="noopener noreferrer" data-skill-name="Render"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/render.svg" alt="" /></span>Render<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#808A9C"><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer" data-skill-name="Vercel"><span class="skill-icon" aria-hidden="true"><img class="icon-light" src="assets/icons/vercel.svg" alt="" /></span>Vercel<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#00C7B7"><a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer" data-skill-name="Netlify"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/netlify.svg" alt="" /></span>Netlify<span class="skill-external" aria-hidden="true">↗</span></a></li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-head"><span aria-hidden="true">05</span><h3>DESENVOLVIMENTO MOBILE</h3></div>
+            <ul>
+              <li style="--skill-accent:#61DAFB"><a href="https://reactnative.dev/" target="_blank" rel="noopener noreferrer" data-skill-name="React Native"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/react-native.svg" alt="" /></span>React Native<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#8F93A7"><a href="https://expo.dev/" target="_blank" rel="noopener noreferrer" data-skill-name="Expo"><span class="skill-icon" aria-hidden="true"><img class="icon-light" src="assets/icons/expo.svg" alt="" /></span>Expo<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#3DDC84"><a href="https://developer.android.com/studio" target="_blank" rel="noopener noreferrer" data-skill-name="Android Studio"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/android-studio.svg" alt="" /></span>Android Studio<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#A97BFF"><a href="https://kotlinlang.org/" target="_blank" rel="noopener noreferrer" data-skill-name="Kotlin"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/kotlin.svg" alt="" /></span>Kotlin<span class="skill-external" aria-hidden="true">↗</span></a></li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-head"><span aria-hidden="true">06</span><h3>PRÁTICAS</h3></div>
+            <ul>
+              <li style="--skill-accent:#B6A9F7"><a href="https://scrumguides.org/" target="_blank" rel="noopener noreferrer" data-skill-name="Scrum"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/scrum.svg" alt="" /></span>Scrum<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#A8C7ED"><a href="https://kanbanguides.org/" target="_blank" rel="noopener noreferrer" data-skill-name="Kanban"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/kanban.svg" alt="" /></span>Kanban<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#74C69D"><a href="https://istqb.org/" target="_blank" rel="noopener noreferrer" data-skill-name="Testes de software"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/tests.svg" alt="" /></span>Testes de software<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#C084D6"><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design" target="_blank" rel="noopener noreferrer" data-skill-name="Design responsivo"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/responsive.svg" alt="" /></span>Design responsivo<span class="skill-external" aria-hidden="true">↗</span></a></li>
+              <li style="--skill-accent:#E0A64F"><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer" data-skill-name="Integração contínua"><span class="skill-icon" aria-hidden="true"><img src="assets/icons/ci.svg" alt="" /></span>Integração contínua<span class="skill-external" aria-hidden="true">↗</span></a></li>
             </ul>
           </div>
         </div>
       </section>
-
       <section id="experience" class="section shell" aria-labelledby="experience-title">
-        <div class="section-heading"><span class="section-index">[ 04 ]</span><h2 id="experience-title">EXPERIÊNCIAS</h2><span class="heading-rule"></span></div>
+        <div class="section-heading"><span class="section-index">04 / TRAJETÓRIA</span><h2 id="experience-title">Experiências<span class="heading-period">.</span></h2><span class="section-note">DO ESTÁGIO ÀS APLICAÇÕES WEB</span></div>
         <div class="timeline">
-          <article class="experience-item"><div class="experience-date">ABR 2025 — MAR 2026</div><div class="experience-content"><p class="experience-org">WEB ACADEMY · TRAINING AND RESEARCH</p><h3>Monitor de Iniciação Científica</h3><p>Pesquisei a inserção profissional de egressos do Web Academy como tema do meu Trabalho de Conclusão de Curso e acompanhei alunos nas atividades do curso de capacitação.</p></div></article>
+          <article class="experience-item"><div class="experience-date">ABR 2025 — MAR 2026</div><div class="experience-content"><p class="experience-org">WEB ACADEMY · PESQUISA E FORMAÇÃO</p><h3>Monitor de Iniciação Científica</h3><p>Pesquisei a inserção profissional de egressos do Web Academy como tema do meu Trabalho de Conclusão de Curso e acompanhei alunos nas atividades do curso de capacitação.</p></div></article>
           <article class="experience-item"><div class="experience-date">JUN 2025 — OUT 2025</div><div class="experience-content"><p class="experience-org">PROPEG / UFAC</p><h3>Desenvolvedor Web Full-Stack</h3><p>Desenvolvi uma plataforma em Django e PostgreSQL para criação, aprovação e gerenciamento de projetos de pesquisa institucionais, com consulta pública e interface responsiva.</p></div></article>
           <article class="experience-item"><div class="experience-date">DEZ 2024 — MAR 2025</div><div class="experience-content"><p class="experience-org">TATE / SEFAZ-AC</p><h3>Desenvolvedor Front-End</h3><p>Implementei as páginas e a busca da plataforma de acórdãos em Angular, TypeScript e Bootstrap. Realizei testes unitários, de integração e funcionais.</p></div></article>
           <article class="experience-item"><div class="experience-date">DEZ 2023 — AGO 2024</div><div class="experience-content"><p class="experience-org">CGU / ACRE</p><h3>Estagiário de TI</h3><p>Prestei suporte a usuários e equipamentos, resolvi problemas de rede e organizei dados e documentos para as equipes de auditoria.</p></div></article>
@@ -189,15 +201,21 @@
       </section>
 
       <section id="contact" class="section shell contact-section" aria-labelledby="contact-title">
-        <div class="section-heading"><span class="section-index">[ 05 ]</span><h2 id="contact-title">CONTATOS</h2><span class="heading-rule"></span></div>
-        <div class="contact-panel"><div><p class="eyebrow">VAMOS CONVERSAR?</p><h3>Tem um projeto em mente?</h3><p>Estou aberto a oportunidades e colaborações em desenvolvimento web. Entre em contato pelo canal que preferir.</p></div><a class="button button-primary" href="mailto:d.moura250304@gmail.com">Enviar e-mail <span aria-hidden="true">↗</span></a></div>
-        <div class="contact-links">
-          <a class="contact-card contact-card--email" href="mailto:d.moura250304@gmail.com"><span class="contact-icon" aria-hidden="true"><img src="assets/icons/email.svg" alt="" /></span><span class="contact-copy"><span class="contact-label">E-MAIL</span><strong>d.moura250304@gmail.com</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
-          <a class="contact-card contact-card--linkedin" href="https://linkedin.com/in/douglas-ma/" target="_blank" rel="noopener noreferrer"><span class="contact-icon" aria-hidden="true"><img src="assets/icons/linkedin.svg" alt="" /></span><span class="contact-copy"><span class="contact-label">LINKEDIN</span><strong>linkedin.com/in/douglas-ma</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
-          <a class="contact-card contact-card--github" href="https://github.com/douglas-ma" target="_blank" rel="noopener noreferrer"><span class="contact-icon" aria-hidden="true"><img src="assets/icons/github.svg" alt="" /></span><span class="contact-copy"><span class="contact-label">GITHUB</span><strong>github.com/douglas-ma</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+        <div class="section-heading"><span class="section-index">05 / CONVERSA</span><h2 id="contact-title">Contatos<span class="heading-period">.</span></h2><span class="section-note">O PRÓXIMO PROJETO COMEÇA AQUI</span></div>
+        <div class="contact-layout">
+          <div class="contact-intro"><p class="eyebrow">VAMOS CONVERSAR?</p><h3>Tem uma ideia?<br /><em>Me conte.</em></h3><p>Estou aberto a oportunidades e colaborações em desenvolvimento web. Entre em contato pelo canal que preferir.</p></div>
+          <div class="contact-links">
+            <a class="contact-card contact-card--email" href="mailto:d.moura250304@gmail.com"><span class="contact-icon" aria-hidden="true"><img src="assets/icons/email.svg" alt="" /></span><span class="contact-copy"><span class="contact-label">E-MAIL</span><strong>d.moura250304@gmail.com</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+            <a class="contact-card contact-card--linkedin" href="https://linkedin.com/in/douglas-ma/" target="_blank" rel="noopener noreferrer"><span class="contact-icon" aria-hidden="true"><img src="assets/icons/linkedin.svg" alt="" /></span><span class="contact-copy"><span class="contact-label">LINKEDIN</span><strong>linkedin.com/in/douglas-ma</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+            <a class="contact-card contact-card--github" href="https://github.com/douglas-ma" target="_blank" rel="noopener noreferrer"><span class="contact-icon" aria-hidden="true"><img src="assets/icons/github.svg" alt="" /></span><span class="contact-copy"><span class="contact-label">GITHUB</span><strong>github.com/douglas-ma</strong></span><span class="contact-arrow" aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </section>
     </main>
+    <dialog id="project-preview" class="preview-dialog" aria-labelledby="preview-title">
+      <div class="preview-dialog-head"><div><span class="small-label">PRÉVIA DO PROJETO</span><h2 id="preview-title"></h2></div><button class="preview-close" type="button" aria-label="Fechar prévia">Fechar <span aria-hidden="true">×</span></button></div>
+      <figure class="preview-figure"><img id="preview-image" alt="" hidden /><iframe id="preview-frame" title="" hidden></iframe><figcaption><span id="preview-caption-text">Tela do projeto</span><span class="preview-controls" hidden><span id="preview-counter" aria-live="off"></span><button class="preview-previous" type="button" aria-label="Imagem anterior">←</button><button class="preview-toggle" type="button" aria-label="Pausar sequência">Pausar</button><button class="preview-next" type="button" aria-label="Próxima imagem">→</button></span></figcaption></figure>
+    </dialog>
     <footer class="site-footer shell"><span>© <span id="year">2026</span> Douglas Araújo</span><a href="#top">Voltar ao topo ↑</a></footer>
   </body>
 </html>
