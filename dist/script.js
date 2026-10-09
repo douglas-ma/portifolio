@@ -176,6 +176,10 @@ const previewControls = document.querySelector('.preview-controls');
 const previewCounter = document.querySelector('#preview-counter');
 const previewToggle = document.querySelector('.preview-toggle');
 const previewGalleries = {
+  encurta: [
+    { src: 'assets/previews/encurta-link.png', caption: 'Encurtamento de links e personalização do endereço' },
+    { src: 'assets/previews/encurta-qrcode.png', caption: 'Geração de QR Code com opções de personalização' },
+  ],
   streak: [
     { src: 'assets/previews/streak-inicio.png', caption: 'Tela inicial e modos de jogo' },
     { src: 'assets/previews/streak-draft.png', caption: 'Montagem do elenco no draft' },
