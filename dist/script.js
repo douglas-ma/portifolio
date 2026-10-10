@@ -180,6 +180,13 @@ const previewGalleries = {
     { src: 'assets/previews/encurta-link.png', caption: 'Encurtamento de links e personalização do endereço' },
     { src: 'assets/previews/encurta-qrcode.png', caption: 'Geração de QR Code com opções de personalização' },
   ],
+  'entre-nos': [
+    { src: 'assets/previews/entre-nos-inicio.png', caption: 'Tela inicial do projeto' },
+    { src: 'assets/previews/entre-nos-sala.png', caption: 'Configuração inicial da sala' },
+    { src: 'assets/previews/entre-nos-participantes.png', caption: 'Lista de participantes' },
+    { src: 'assets/previews/entre-nos-exclusoes.png', caption: 'Regras de exclusão do sorteio' },
+    { src: 'assets/previews/entre-nos-convites.png', caption: 'Sala com convites individuais' },
+  ],
   streak: [
     { src: 'assets/previews/streak-inicio.png', caption: 'Tela inicial e modos de jogo' },
     { src: 'assets/previews/streak-draft.png', caption: 'Montagem do elenco no draft' },
