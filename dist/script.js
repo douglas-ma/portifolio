@@ -194,6 +194,14 @@ const previewGalleries = {
     { src: 'assets/previews/pauta-acre-corpo-materia.png', caption: 'Texto completo da matéria' },
     { src: 'assets/previews/pauta-acre-midias.png', caption: 'Mídias associadas à matéria' },
   ],
+  'radar-diario': [
+    { src: 'assets/previews/radar-diario-acervo.png', caption: 'Acervo público e edição mais recente do Diário Oficial' },
+    { src: 'assets/previews/radar-diario-edicoes.png', caption: 'Lista de edições com filtro por número e data' },
+    { src: 'assets/previews/radar-diario-publicacoes.png', caption: 'Publicações da edição organizadas por assunto' },
+    { src: 'assets/previews/radar-diario-leitura.png', caption: 'Leitura organizada do conteúdo de uma publicação' },
+    { src: 'assets/previews/radar-diario-busca.png', caption: 'Busca por palavras-chave em todas as edições' },
+    { src: 'assets/previews/radar-diario-panorama.png', caption: 'Panorama diário de publicações por órgão' },
+  ],
   streak: [
     { src: 'assets/previews/streak-inicio.png', caption: 'Tela inicial e modos de jogo' },
     { src: 'assets/previews/streak-draft.png', caption: 'Montagem do elenco no draft' },
