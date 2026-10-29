@@ -187,6 +187,13 @@ const previewGalleries = {
     { src: 'assets/previews/entre-nos-exclusoes.png', caption: 'Regras de exclusão do sorteio' },
     { src: 'assets/previews/entre-nos-convites.png', caption: 'Sala com convites individuais' },
   ],
+  'pauta-acre': [
+    { src: 'assets/previews/pauta-acre-painel.png', caption: 'Painel com notícias e filtros' },
+    { src: 'assets/previews/pauta-acre-feed.png', caption: 'Feed de matérias e fontes monitoradas' },
+    { src: 'assets/previews/pauta-acre-materia.png', caption: 'Matéria capturada com imagem de capa' },
+    { src: 'assets/previews/pauta-acre-corpo-materia.png', caption: 'Texto completo da matéria' },
+    { src: 'assets/previews/pauta-acre-midias.png', caption: 'Mídias associadas à matéria' },
+  ],
   streak: [
     { src: 'assets/previews/streak-inicio.png', caption: 'Tela inicial e modos de jogo' },
     { src: 'assets/previews/streak-draft.png', caption: 'Montagem do elenco no draft' },
