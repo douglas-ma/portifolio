@@ -106,7 +106,7 @@ main, .site-footer { position: relative; z-index: 1; }
 .project-link { display: inline-flex; align-items: center; gap: 9px; width: fit-content; color: var(--blue); font-size: 14px; font-weight: 700; white-space: nowrap; transition: gap .2s, color .2s; }
 .project-link:hover { gap: 14px; text-decoration: underline; }
 .project-link img, .project-private img { display: block; width: 18px; height: 18px; flex: none; }
-.project-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.project-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
 .preview-trigger { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 0; border: 0; background: transparent; color: var(--blue); font-size: 14px; font-weight: 700; cursor: pointer; }
 .preview-trigger:hover { text-decoration: underline; }
 .preview-trigger img { display: block; width: 18px; height: 18px; flex: none; }
